@@ -6,6 +6,8 @@ const options = {
   useUnifiedTopology: true,
 }
 
+mongoose.set("strictQuery", false)
+
 mongoose.connect(process.env.MONGO_URI, options)
   .then(() => console.log("Connected to database"))
   .catch((err) => console.log(err))

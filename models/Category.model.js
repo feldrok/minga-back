@@ -14,14 +14,16 @@ const categorySchema = new mongoose.Schema(
         type: String,
       },
     ],
-    details: {
+    detail: {
       type: String,
+      required: true,
     },
     user_id: {
-      type: String,
+      type: mongoose.Types.ObjectId,
+      ref: "users",
     },
   },
   { timestamps: true }
 )
 
-export const Category = mongoose.model("Category", categorySchema)
+export const Category = mongoose.model("categories", categorySchema)
