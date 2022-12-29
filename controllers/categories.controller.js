@@ -5,13 +5,7 @@ const controller = {
   // CRUD
   create: async (req, res) => {
     try {
-      const { name, detail, examples, user_id } = req.body
-      await Category.create({
-        name,
-        detail,
-        examples,
-        user_id,
-      })
+      await Category.create(req.body)
       res.status(201).json({
         success: true,
         response: "Categoría creada",
